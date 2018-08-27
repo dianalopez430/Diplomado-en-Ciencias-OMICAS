@@ -1,4 +1,4 @@
-# Diplomado-en-Ciencias-OMICAS
+# Diplomado en Ciencias Ómicas
 
 Analizar e interpretar datos biológicos a partir del uso de herramientas y flujos de trabajo para el análisis de datos ómicos de secuenciación de siguiente generación (NGS), es el objetivo principal del nuevo Diplomado en Ciencias Ómicas que ofrece la Universidad del Valle a través de la Facultad de Ciencias Naturales y Exactas.
 
@@ -59,18 +59,6 @@ Temas:
 |31 Octubre	|12|Estudios de asociación genómica-GWAS I|
 |7 Noviembre	|13| Estudios de asociación genómica-GWAS II|
 |14 Noviembre	|14|	**Segundo Parcial**|
-
-
-
-
-
-
-
-
-
-
-
-
 
 # BIBLIOGRAFÍA
 
