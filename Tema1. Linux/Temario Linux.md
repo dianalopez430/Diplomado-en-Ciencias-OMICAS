@@ -1,4 +1,4 @@
-#Introducción al sistema operativo Linux, conocimientos básicos para la administración y utilización
+# Introducción al sistema operativo Linux, conocimientos básicos para la administración y utilización
 **(16 horas)**
 
 1. Introducción a Linux
