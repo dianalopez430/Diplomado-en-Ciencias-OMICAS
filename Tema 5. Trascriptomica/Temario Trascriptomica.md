@@ -1,4 +1,4 @@
-# Genómica funcional: transcriptómica 
+# Genómica funcional: Transcriptómica 
 **(16 horas)**
 
 1. Introducción a RNA-seq
