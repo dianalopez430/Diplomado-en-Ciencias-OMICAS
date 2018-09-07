@@ -1,0 +1,164 @@
+/software/quast-4.5/quast.py /data/genomics/genomes/E.coli/SPAdes.fasta.gz -R /data/genomics/genomes/E.coli/ref_files/reference.fasta.gz /data/genomics/genomes/E.coli/Velvet.fasta.gz -o ecoli
+
+Version: 4.5, 15ca3b9
+
+System information:
+  OS: Linux-4.10.0-28-generic-x86_64-with-Ubuntu-16.04-xenial (linux_64)
+  Python version: 2.7.12
+  CPUs number: 3
+
+Started: 2017-08-04 16:51:36
+
+Logging to /home/student/ecoli/quast.log
+NOTICE: Maximum number of threads is set to 1 (use --threads option to set it manually)
+
+CWD: /home/student
+Main parameters: 
+  Threads: 1, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /data/genomics/genomes/E.coli/ref_files/reference.fasta.gz ==> reference
+
+Contigs:
+  Pre-processing...
+  1  /data/genomics/genomes/E.coli/SPAdes.fasta.gz ==> SPAdes
+  2  /data/genomics/genomes/E.coli/Velvet.fasta.gz ==> Velvet
+
+2017-08-04 16:51:38
+Running Basic statistics processor...
+  Reference genome:
+    reference.fasta, length = 4639675, num fragments = 1, GC % = 50.79
+  Contig files: 
+    1  SPAdes
+    2  Velvet
+  Calculating N50 and L50...
+    1  SPAdes, N50 = 132831, L50 = 13, Total length = 4558330, GC % = 50.74, # N's per 100 kbp =  0.00
+    2  Velvet, N50 = 82776, L50 = 18, Total length = 4554702, GC % = 50.74, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/student/ecoli/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/student/ecoli/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/student/ecoli/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/student/ecoli/basic_stats/GC_content_plot.pdf
+  Drawing SPAdes GC content plot...
+    saved to /home/student/ecoli/basic_stats/SPAdes_GC_content_plot.pdf
+  Drawing Velvet GC content plot...
+    saved to /home/student/ecoli/basic_stats/Velvet_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 3x)...
+    saved to /home/student/ecoli/basic_stats/coverage_histogram.pdf
+  Drawing SPAdes coverage histogram (bin size: 3x)...
+    saved to /home/student/ecoli/basic_stats/SPAdes_coverage_histogram.pdf
+  Drawing Velvet coverage histogram (bin size: 4x)...
+    saved to /home/student/ecoli/basic_stats/Velvet_coverage_histogram.pdf
+Done.
+
+2017-08-04 16:51:42
+Running Contig analyzer...
+NOTICE: Previous try of E-MEM compilation was unsuccessful! For forced retrying, please remove /software/quast-4.5/quast_libs/MUMmer/make.emem.failed and restart QUAST. Currently, QUAST will use Nucmer which is absolutely fine, albeit slower.
+  1  SPAdes
+  1  Logging to files /home/student/ecoli/contigs_reports/contigs_report_SPAdes.stdout and contigs_report_SPAdes.stderr...
+  1  Aligning contigs to the reference
+  1  /software/quast-4.5/quast_libs/MUMmer/nucmer -c 65 -l 65 --maxmatch -p ecoli/contigs_reports/nucmer_output/SPAdes \
+     ecoli/quast_corrected_input/reference.fasta ecoli/quast_corrected_input/SPAdes.fasta \
+     >> ecoli/contigs_reports/contigs_report_SPAdes.stdout 2>> ecoli/contigs_reports/contigs_report_SPAdes.stderr
+  1  /software/quast-4.5/quast_libs/MUMmer/delta-filter -i 95.0 -l 0 ecoli/contigs_reports/nucmer_output/SPAdes.delta \
+     > ecoli/contigs_reports/nucmer_output/SPAdes.fdelta 2> ecoli/contigs_reports/contigs_report_SPAdes.stderr
+  1  /software/quast-4.5/quast_libs/MUMmer/mummerplot --html --layout -p ecoli/contigs_reports/nucmer_output/SPAdes \
+     ecoli/contigs_reports/nucmer_output/SPAdes.delta > ecoli/contigs_reports/contigs_report_SPAdes.stdout \
+     2> ecoli/contigs_reports/contigs_report_SPAdes.stderr
+  1  /software/quast-4.5/quast_libs/gnuplot/src/gnuplot ecoli/contigs_reports/nucmer_output/SPAdes.gp \
+     > /dev/null 2> ecoli/contigs_reports/contigs_report_SPAdes.stderr
+  1  MUMmer plot saved to /home/student/ecoli/contigs_reports/SPAdes_mummerplot.html
+  1  /software/quast-4.5/quast_libs/MUMmer/show-coords ecoli/contigs_reports/nucmer_output/SPAdes.delta \
+     > ecoli/contigs_reports/nucmer_output/SPAdes.coords_tmp 2> ecoli/contigs_reports/contigs_report_SPAdes.stderr
+  1  /software/quast-4.5/quast_libs/MUMmer/show-snps -S -T -H ecoli/contigs_reports/nucmer_output/SPAdes.delta \
+     < ecoli/contigs_reports/nucmer_output/SPAdes.coords.headless > ecoli/contigs_reports/nucmer_output/SPAdes.all_snps \
+     2> ecoli/contigs_reports/contigs_report_SPAdes.stderr
+  1  Analysis is finished.
+
+  Gzipping /home/student/ecoli/contigs_reports/nucmer_output/SPAdes.all_snps to reduce disk space usage...
+    saved to /home/student/ecoli/contigs_reports/nucmer_output/SPAdes.all_snps.gz
+  2  Velvet
+  2  Logging to files /home/student/ecoli/contigs_reports/contigs_report_Velvet.stdout and contigs_report_Velvet.stderr...
+  2  Aligning contigs to the reference
+  2  /software/quast-4.5/quast_libs/MUMmer/nucmer -c 65 -l 65 --maxmatch -p ecoli/contigs_reports/nucmer_output/Velvet \
+     ecoli/quast_corrected_input/reference.fasta ecoli/quast_corrected_input/Velvet.fasta \
+     >> ecoli/contigs_reports/contigs_report_Velvet.stdout 2>> ecoli/contigs_reports/contigs_report_Velvet.stderr
+  2  /software/quast-4.5/quast_libs/MUMmer/delta-filter -i 95.0 -l 0 ecoli/contigs_reports/nucmer_output/Velvet.delta \
+     > ecoli/contigs_reports/nucmer_output/Velvet.fdelta 2> ecoli/contigs_reports/contigs_report_Velvet.stderr
+  2  /software/quast-4.5/quast_libs/MUMmer/mummerplot --html --layout -p ecoli/contigs_reports/nucmer_output/Velvet \
+     ecoli/contigs_reports/nucmer_output/Velvet.delta > ecoli/contigs_reports/contigs_report_Velvet.stdout \
+     2> ecoli/contigs_reports/contigs_report_Velvet.stderr
+  2  /software/quast-4.5/quast_libs/gnuplot/src/gnuplot ecoli/contigs_reports/nucmer_output/Velvet.gp \
+     > /dev/null 2> ecoli/contigs_reports/contigs_report_Velvet.stderr
+  2  MUMmer plot saved to /home/student/ecoli/contigs_reports/Velvet_mummerplot.html
+  2  /software/quast-4.5/quast_libs/MUMmer/show-coords ecoli/contigs_reports/nucmer_output/Velvet.delta \
+     > ecoli/contigs_reports/nucmer_output/Velvet.coords_tmp 2> ecoli/contigs_reports/contigs_report_Velvet.stderr
+  2  /software/quast-4.5/quast_libs/MUMmer/show-snps -S -T -H ecoli/contigs_reports/nucmer_output/Velvet.delta \
+     < ecoli/contigs_reports/nucmer_output/Velvet.coords.headless > ecoli/contigs_reports/nucmer_output/Velvet.all_snps \
+     2> ecoli/contigs_reports/contigs_report_Velvet.stderr
+  2  Analysis is finished.
+
+  Gzipping /home/student/ecoli/contigs_reports/nucmer_output/Velvet.all_snps to reduce disk space usage...
+    saved to /home/student/ecoli/contigs_reports/nucmer_output/Velvet.all_snps.gz
+  Creating total report...
+    saved to /home/student/ecoli/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/student/ecoli/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/student/ecoli/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /home/student/ecoli/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /home/student/ecoli/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2017-08-04 16:52:04
+Running NA-NGA calculation...
+  1  SPAdes, Largest alignment = 285114, NA50 = 132831, NGA50 = 132831, LA50 = 13, LGA50 = 13
+  2  Velvet, Largest alignment = 196677, NA50 = 78602, NGA50 = 78602, LA50 = 19, LGA50 = 19
+  Drawing cumulative plot...
+    saved to /home/student/ecoli/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /home/student/ecoli/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /home/student/ecoli/aligned_stats/NGAx_plot.pdf
+Done.
+
+2017-08-04 16:52:05
+Running Genome analyzer...
+  NOTICE: No file with genes provided. Use the -G option if you want to specify it.
+  NOTICE: No file with operons provided. Use the -O option if you want to specify it.
+  1  SPAdes
+  1  Analysis is finished.
+  2  Velvet
+  2  Analysis is finished.
+  Drawing Genome fraction, % histogram...
+    saved to /home/student/ecoli/genome_stats/genome_fraction_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2017-08-04 16:52:09
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2017-08-04 16:52:11
+RESULTS:
+  Text versions of total report are saved to /home/student/ecoli/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/student/ecoli/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /home/student/ecoli/report.html
+  PDF version (tables and plots) is saved to /home/student/ecoli/report.pdf
+  Icarus (contig browser) is saved to /home/student/ecoli/icarus.html
+  Log saved to /home/student/ecoli/quast.log
+
+Finished: 2017-08-04 16:52:11
+Elapsed time: 0:00:34.961286
+NOTICEs: 5; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

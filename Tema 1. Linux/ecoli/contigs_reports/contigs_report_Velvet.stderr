@@ -1,0 +1,13 @@
+WARNING: Could not find gnuplot, plot will not be rendered
+Writing filtered delta file /home/student/ecoli/contigs_reports/nucmer_output/Velvet.filter
+Reading delta file /home/student/ecoli/contigs_reports/nucmer_output/Velvet.delta
+Writing plot files /home/student/ecoli/contigs_reports/nucmer_output/Velvet.fplot, /home/student/ecoli/contigs_reports/nucmer_output/Velvet.rplot
+Writing gnuplot script /home/student/ecoli/contigs_reports/nucmer_output/Velvet.gp
+are/quast-4.5/quast_libs/MUMmer/mummer /home/student/ecoli/contigs_reports/nucmer_output/Velvet.ntref 1.75
+# reading input file "/home/student/ecoli/quast_corrected_input/Velvet.fasta" of length 4554821
+# matching query-file "/home/student/ecoli/quast_corrected_input/Velvet.fasta"
+# against subject-file "/home/student/ecoli/contigs_reports/nucmer_output/Velvet.ntref"
+# COMPLETETIME /software/quast-4.5/quast_libs/MUMmer/mummer /home/student/ecoli/contigs_reports/nucmer_output/Velvet.ntref 5.61
+# SPACE /software/quast-4.5/quast_libs/MUMmer/mummer /home/student/ecoli/contigs_reports/nucmer_output/Velvet.ntref 8.92
+4: FINISHING DATA
+WARNING: there was a problem deleting the temporary output files
